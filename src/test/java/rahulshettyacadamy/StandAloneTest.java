@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import rahulshettyacadamy.pageobjects.LandingPage;
+
 public class StandAloneTest {
 
 	public static void main(String[] args) throws InterruptedException {
