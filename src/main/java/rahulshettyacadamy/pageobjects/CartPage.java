@@ -50,11 +50,6 @@ public class CartPage extends AbstractComponents {
 		
 	}
 	
-	public void scrollPage() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0, 50)");
-		
-	}
-	
+
 	
 }

@@ -39,18 +39,16 @@ public class SubmitOrderTest {
 
 		List<WebElement> products = productCatalouge.getProductList();
 		productCatalouge.addToCart(productName);
+
 		CartPage cartPage = productCatalouge.goToMyCartPage();
 
 		boolean match = cartPage.validationOfProductNameOnMyCartPage(productName);
 		Assert.assertTrue(match);
-		cartPage.clickOnCheckOut();
-		cartPage.scrollPage();
-
-		CheckOutPage checkOutPage = new CheckOutPage(driver);
+		CheckOutPage checkOutPage = cartPage.clickOnCheckOut();
+		checkOutPage.scrollPage();
 		checkOutPage.selectCountry(countryName);
-		checkOutPage.placeOrderClick();
 
-		ConfirmationPage confirmationPage = new ConfirmationPage(driver);
+		ConfirmationPage confirmationPage = checkOutPage.placeOrderClick();
 		String message = confirmationPage.verifyConfrimationMessage();
 
 		Assert.assertTrue(message.equalsIgnoreCase("Thankyou for the order."));

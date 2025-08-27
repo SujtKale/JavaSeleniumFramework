@@ -32,8 +32,6 @@ public class ProductCatalouge extends AbstractComponents {
 
 	
 	
-	@FindBy(xpath="//*[text()='Checkout']")
-	WebElement checkoutButton;
 	
 
 	By products1 = By.cssSelector("div.mb-3");
@@ -48,10 +46,7 @@ public class ProductCatalouge extends AbstractComponents {
 
 	}
 	
-	public void clickOnCheckOut() {
-		checkoutButton.click();
 
-	}
 
 	public void addToCart(String productName) {
 		for (WebElement product : products) {
