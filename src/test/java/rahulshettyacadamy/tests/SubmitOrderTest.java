@@ -1,8 +1,9 @@
-package rahulshettyacadamy;
+package rahulshettyacadamy.tests;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -15,25 +16,24 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
+import rahulshettyacadamy.TestComponents.BaseTest;
 import rahulshettyacadamy.pageobjects.CartPage;
 import rahulshettyacadamy.pageobjects.CheckOutPage;
 import rahulshettyacadamy.pageobjects.ConfirmationPage;
 import rahulshettyacadamy.pageobjects.LandingPage;
 import rahulshettyacadamy.pageobjects.ProductCatalouge;
 
-public class SubmitOrderTest {
+public class SubmitOrderTest extends BaseTest {
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public void submitOrder() throws IOException {
 
-		WebDriver driver = new ChromeDriver();
 		String productName = "ZARA COAT 3";
 		String countryName = "India";
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-		LandingPage landingPage = new LandingPage(driver);
-		landingPage.goTo();
+		LandingPage landingPage = LaunchingApp();
 
 		ProductCatalouge productCatalouge = landingPage.loginApplication("sujitkale3767@gmail.com", "Test@123");
 
@@ -52,6 +52,7 @@ public class SubmitOrderTest {
 		String message = confirmationPage.verifyConfrimationMessage();
 
 		Assert.assertTrue(message.equalsIgnoreCase("Thankyou for the order."));
-
+		driver.close();
 	}
+
 }

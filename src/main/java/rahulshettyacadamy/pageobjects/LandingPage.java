@@ -34,7 +34,7 @@ public class LandingPage extends AbstractComponents {
 	@FindBy(css="input.login-btn")
 	WebElement submit;
 	
-	public ProductCatalouge loginApplication(String email, String password) {
+	public  ProductCatalouge loginApplication(String email, String password) {
 		userEmails.sendKeys(email);
 		passwordEle.sendKeys(password);
 		submit.click();		
