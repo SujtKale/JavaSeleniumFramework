@@ -30,10 +30,6 @@ public class ProductCatalouge extends AbstractComponents {
 	@FindBy(css = "div.mb-3")
 	List<WebElement> products;
 
-	
-	
-	
-
 	By products1 = By.cssSelector("div.mb-3");
 	By addToCart = By.xpath("//button[@class='btn w-10 rounded']");
 	By toastMessage = By.cssSelector("div.toast-success");
@@ -45,8 +41,6 @@ public class ProductCatalouge extends AbstractComponents {
 		return products;
 
 	}
-	
-
 
 	public void addToCart(String productName) {
 		for (WebElement product : products) {
@@ -62,5 +56,4 @@ public class ProductCatalouge extends AbstractComponents {
 
 	}
 
-	
 }

@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import rahulshettyacadamy.pageobjects.LandingPage;
 
@@ -16,6 +18,8 @@ public class BaseTest {
 	
 	
 	public WebDriver driver;
+	
+	public LandingPage landingPage;
 	
 	
 	public WebDriver InitializeBrowser() throws IOException {
@@ -47,13 +51,26 @@ public class BaseTest {
 	}
 	
 	
-	
+	@BeforeMethod
 	public LandingPage LaunchingApp() throws IOException {
 		driver=InitializeBrowser();
-		LandingPage landingPage = new LandingPage(driver);
+		 landingPage = new LandingPage(driver);
 		landingPage.goTo();
 		return landingPage;
 		
 	}
 	
+	
+	
+	
+	@AfterMethod
+	public void tearDown() {
+		
+		driver.close();
+		}
+	
+	
+	
 }
+	
+

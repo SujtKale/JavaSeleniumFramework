@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import rahulshettyacadamy.pageobjects.CartPage;
+import rahulshettyacadamy.pageobjects.OrderPage;
 
 public class AbstractComponents {
 	WebDriver driver;
@@ -24,6 +25,10 @@ public class AbstractComponents {
 	@FindBy(xpath = "//button[@routerlink='/dashboard/cart']")
 	WebElement cartButton;
 
+	@FindBy(xpath="//*[contains(text(),'ORDERS')]")
+	WebElement ordersButton;
+	
+	
 	public void waitUntilVisibilityOfElement(By findBy) {
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
 		w.until(ExpectedConditions.visibilityOfElementLocated(findBy));
@@ -35,6 +40,13 @@ public class AbstractComponents {
 
 		// w.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("ngx-spinner.ng-tns-c11-0")));
 	}
+	
+	
+	public void waitUntilVisibilityOfElements(WebElement element) {
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
+		w.until(ExpectedConditions.visibilityOf(element));
+	}
+
 
 	public CartPage goToMyCartPage() {
 
@@ -44,4 +56,14 @@ public class AbstractComponents {
 
 	}
 
-}
+	
+	public OrderPage goToMyOrdersPage() {
+		
+		ordersButton.click();
+		OrderPage orderPage = new OrderPage(driver);
+		return orderPage;
+		
+	}
+	
+}	
+

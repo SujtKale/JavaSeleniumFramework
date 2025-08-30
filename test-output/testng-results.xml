@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-30T18:02:42 IST" name="Default suite" finished-at="2025-08-30T18:03:16 IST" duration-ms="33278">
+    <groups>
+    </groups>
+    <test started-at="2025-08-30T18:02:42 IST" name="Default test" finished-at="2025-08-30T18:03:16 IST" duration-ms="33278">
+      <class name="rahulshettyacadamy.tests.SubmitOrderTest">
+        <test-method is-config="true" signature="LaunchingApp()[pri:0, instance:rahulshettyacadamy.tests.SubmitOrderTest@28701274]" started-at="2025-08-30T18:02:42 IST" name="LaunchingApp" finished-at="2025-08-30T18:02:50 IST" duration-ms="7974" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchingApp -->
+        <test-method signature="submitOrder()[pri:0, instance:rahulshettyacadamy.tests.SubmitOrderTest@28701274]" started-at="2025-08-30T18:02:50 IST" name="submitOrder" finished-at="2025-08-30T18:03:06 IST" duration-ms="15908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:rahulshettyacadamy.tests.SubmitOrderTest@28701274]" started-at="2025-08-30T18:03:06 IST" name="tearDown" finished-at="2025-08-30T18:03:07 IST" duration-ms="283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchingApp()[pri:0, instance:rahulshettyacadamy.tests.SubmitOrderTest@28701274]" started-at="2025-08-30T18:03:07 IST" name="LaunchingApp" finished-at="2025-08-30T18:03:14 IST" duration-ms="7365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchingApp -->
+        <test-method signature="orderHistoryTest()[pri:0, instance:rahulshettyacadamy.tests.SubmitOrderTest@28701274]" started-at="2025-08-30T18:03:14 IST" name="orderHistoryTest" finished-at="2025-08-30T18:03:15 IST" depends-on-methods="rahulshettyacadamy.tests.SubmitOrderTest.submitOrder" duration-ms="1328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:rahulshettyacadamy.tests.SubmitOrderTest@28701274]" started-at="2025-08-30T18:03:15 IST" name="tearDown" finished-at="2025-08-30T18:03:16 IST" duration-ms="160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- rahulshettyacadamy.tests.SubmitOrderTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

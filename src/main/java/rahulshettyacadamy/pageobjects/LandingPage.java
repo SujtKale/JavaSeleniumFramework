@@ -34,6 +34,13 @@ public class LandingPage extends AbstractComponents {
 	@FindBy(css="input.login-btn")
 	WebElement submit;
 	
+	
+	@FindBy(css="div.toast-message")
+	WebElement errorMessage;
+	
+	
+	
+	
 	public  ProductCatalouge loginApplication(String email, String password) {
 		userEmails.sendKeys(email);
 		passwordEle.sendKeys(password);
@@ -46,5 +53,15 @@ public class LandingPage extends AbstractComponents {
 		
 		driver.get("https://rahulshettyacademy.com/client/#/auth/login");
 	}
+
+	
+public String getErrorMessage() {
+	waitUntilVisibilityOfElements(errorMessage);
+	
+		return errorMessage.getText();
+	}
+
+	
+
 
 }

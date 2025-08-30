@@ -1,20 +1,9 @@
 package rahulshettyacadamy.tests;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
 import java.io.IOException;
-import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,7 +11,7 @@ import rahulshettyacadamy.TestComponents.BaseTest;
 import rahulshettyacadamy.pageobjects.CartPage;
 import rahulshettyacadamy.pageobjects.CheckOutPage;
 import rahulshettyacadamy.pageobjects.ConfirmationPage;
-import rahulshettyacadamy.pageobjects.LandingPage;
+import rahulshettyacadamy.pageobjects.OrderPage;
 import rahulshettyacadamy.pageobjects.ProductCatalouge;
 
 public class SubmitOrderTest extends BaseTest {
@@ -33,7 +22,7 @@ public class SubmitOrderTest extends BaseTest {
 		String productName = "ZARA COAT 3";
 		String countryName = "India";
 
-		LandingPage landingPage = LaunchingApp();
+		
 
 		ProductCatalouge productCatalouge = landingPage.loginApplication("sujitkale3767@gmail.com", "Test@123");
 
@@ -52,7 +41,21 @@ public class SubmitOrderTest extends BaseTest {
 		String message = confirmationPage.verifyConfrimationMessage();
 
 		Assert.assertTrue(message.equalsIgnoreCase("Thankyou for the order."));
-		driver.close();
+		
+	}
+	
+	//To verify that "ZARA COAT 3" is present on Orders Page
+	
+	
+	@Test (dependsOnMethods ={"submitOrder"})
+	public void orderHistoryTest() {
+		String productName = "ZARA COAT 3";
+		ProductCatalouge productCatalouge = landingPage.loginApplication("sujitkale3767@gmail.com", "Test@123");
+		OrderPage orderPage =productCatalouge.goToMyOrdersPage();
+	boolean match =	orderPage.validationOfProductNameOnMyOrderPage(productName);
+	
+	Assert.assertTrue(match);
+		
 	}
 
 }
