@@ -13,7 +13,7 @@ import rahulshettyacadamy.pageobjects.ProductCatalouge;
 
 public class ErrorValidationsTest extends BaseTest {
 
-	@Test
+	@Test(groups= {"ErrorHandeling"})
 	public void loginErrorValidation() throws IOException {
 
 		String productName = "ZARA COAT 3";

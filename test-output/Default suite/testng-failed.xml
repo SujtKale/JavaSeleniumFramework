@@ -5,6 +5,9 @@
     <classes>
       <class name="rahulshettyacadamy.tests.SubmitOrderTest">
         <methods>
+          <include name="tearDown"/>
+          <include name="orderHistoryTest"/>
+          <include name="LaunchingApp"/>
           <include name="submitOrder"/>
         </methods>
       </class> <!-- rahulshettyacadamy.tests.SubmitOrderTest -->

@@ -31,7 +31,7 @@ public class ProductCatalouge extends AbstractComponents {
 	List<WebElement> products;
 
 	By products1 = By.cssSelector("div.mb-3");
-	By addToCart = By.xpath("//button[@class='btn w-10 rounded']");
+	By addToCart = By.xpath(".//button[@class='btn w-10 rounded']");
 	By toastMessage = By.cssSelector("div.toast-success");
 	By spinner = By.cssSelector("ngx-spinner.ng-tns-c11-0");
 

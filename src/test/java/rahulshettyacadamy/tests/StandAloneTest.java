@@ -28,13 +28,13 @@ public class StandAloneTest {
 		driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys("sujitkale3767@gmail.com");
 		driver.findElement(By.xpath("//input[@id='userPassword']")).sendKeys("Test@123");
 		driver.findElement(By.cssSelector("input.login-btn")).click();
-		String productName = "ZARA COAT 3";
+		String productName = "ADIDAS ORIGINAL";
 		driver.manage().window().maximize();
 
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
-		w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.mb-3")));
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
 
-		List<WebElement> products = driver.findElements(By.cssSelector("div.mb-3"));
+		List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
 		System.out.println(products.size());
 
 		/*
@@ -47,7 +47,7 @@ public class StandAloneTest {
 		for (WebElement product : products) {
 
 			if (product.getText().contains(productName)) {
-				driver.findElement(By.xpath("//button[@class='btn w-10 rounded']")).click();
+				product.findElement(By.xpath(".//button[@class='btn w-10 rounded']")).click();
 			}
 		}
 
